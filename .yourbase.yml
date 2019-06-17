@@ -1,7 +1,7 @@
 dependencies:
   build:
     - ruby:2.6.2
-    - node:10.1.5
+    - node:10.16.0
 
 build_targets:
   - name: default
