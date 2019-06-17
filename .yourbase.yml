@@ -8,7 +8,7 @@ build_targets:
       - test_gem 
   - name: test_gem
     tags:
-      - channel:experimental
+      channel: experimental
     build_after: 
        - setup 
     commands:
@@ -21,7 +21,7 @@ build_targets:
       - npm install
   - name: test_rack
     tags:
-      - channel:experimental
+      channel: experimental
     build_after:
       - setup 
     commands:
