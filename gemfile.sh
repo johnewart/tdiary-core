@@ -1,0 +1,1 @@
+echo 'gemspec' > Gemfile.local

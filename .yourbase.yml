@@ -16,9 +16,11 @@ build_targets:
       - bundle exec tdiary test
   - name: setup
     commands:
-      - "echo 'gemspec' > Gemfile.local"
+      - gem install bundler
+      - sh gemfile.sh
       - gem update --system
       - gem update bundler
+      - bundle install
       - npm install
   - name: test_rack
     tags:
