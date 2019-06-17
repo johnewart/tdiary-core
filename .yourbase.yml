@@ -7,6 +7,8 @@ build_targets:
     build_after:
       - test_gem 
   - name: test_gem
+    tags:
+      - channel:experimental
     build_after: 
        - setup 
     commands:
@@ -18,6 +20,8 @@ build_targets:
       - gem update bundler
       - npm install
   - name: test_rack
+    tags:
+      - channel:experimental
     build_after:
       - setup 
     commands:
