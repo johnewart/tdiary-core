@@ -1,0 +1,32 @@
+dependencies:
+  build:
+    - ruby:2.6.2
+
+build_targets:
+  - name: default
+    build_after:
+      - test_gem 
+  - name: test_gem
+    build_after: 
+       - setup 
+    commands:
+      - bundle exec tdiary test
+  - name: setup
+    commands:
+      - "echo 'gemspec' > Gemfile.local"
+      - gem update --system
+      - gem update bundler
+      - npm install
+  - name: test_rack
+    build_after:
+      - setup 
+    commands:
+      - bundle exec rake spec jasmine:ci test 
+
+ci:
+  builds:
+    - name: gem_test
+      build_target: test_gem
+    - name: rack_test
+      build_target: test_rack   
+      
